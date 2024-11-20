@@ -36,7 +36,7 @@ def prepare_for_training(data, polynomial_degree=0, sinusoid_degree=0, normalize
         polynomials = generate_polynomials(data_normalized, polynomial_degree, normalize_data)
         data_processed = np.concatenate((data_processed, polynomials), axis=1)
 
-    # 加一列1
+    # 加一列 1
     data_processed = np.hstack((np.ones((num_examples, 1)), data_processed))
 
     return data_processed, features_mean, features_deviation

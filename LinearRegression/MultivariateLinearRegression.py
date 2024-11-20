@@ -1,3 +1,7 @@
+"""
+多特征线性回归的梯度下降，有两个特征，一个标签
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

@@ -3,7 +3,7 @@ import numpy as np
 
 def generate_sinusoids(dataset, sinusoid_degree):
     """
-    sin(x).
+    sin(x). sin(2x). sin(3x)...sin(nx)
     """
 
     num_examples = dataset.shape[0]

@@ -1,3 +1,7 @@
+"""
+单特征线性回归的梯度下降，只有一个特征，一个标签
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -7,7 +11,7 @@ from linear_regression import LinearRegression
 data = pd.read_csv('../data/world-happiness-report-2017.csv')
 
 # 划分得到训练集和测试集
-train_data = data.sample(frac=0.8)
+train_data = data.sample(frac=0.8)    # 从data中随机抽取80%作为训练集
 test_data = data.drop(train_data.index)
 
 input_param_name = 'Economy..GDP.per.Capita.'

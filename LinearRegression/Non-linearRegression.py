@@ -1,3 +1,7 @@
+"""
+非线性回归的梯度下降
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -9,7 +13,7 @@ data = pd.read_csv('../data/non-linear-regression-x-y.csv')
 x = data['x'].values.reshape((data.shape[0], 1))
 y = data['y'].values.reshape((data.shape[0], 1))
 
-data.head(10)
+print(data.head(10))
 
 plt.plot(x, y)
 plt.show()
@@ -31,7 +35,6 @@ print('开始损失: {:.2f}'.format(cost_history[0]))
 print('结束损失: {:.2f}'.format(cost_history[-1]))
 
 theta_table = pd.DataFrame({'Model Parameters': theta.flatten()})
-
 
 plt.plot(range(num_iterations), cost_history)
 plt.xlabel('Iterations')

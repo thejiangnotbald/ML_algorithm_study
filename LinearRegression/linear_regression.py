@@ -1,3 +1,7 @@
+'''
+# 实现线性回归算法
+'''
+
 import numpy as np
 
 from utils.features import prepare_for_training
@@ -16,9 +20,9 @@ class LinearRegression:
         self.data = data_processed                  # 所有样本数据
         self.labels = labels                        # 标签
         self.features_mean = features_mean          #
-        self.features_deviation = features_deviation
-        self.polynomial_degree = polynomial_degree
-        self.sinusoid_degree = sinusoid_degree
+        self.features_deviation = features_deviation  # 特征的标准差
+        self.polynomial_degree = polynomial_degree  # 多项式的特征变换次数
+        self.sinusoid_degree = sinusoid_degree      # 正弦的次数
         self.normalize_data = normalize_data        # 是否归一化处理
 
         num_features = self.data.shape[1]           # 样本的特征数
@@ -59,8 +63,8 @@ class LinearRegression:
         损失函数计算损失值，均方误差
         """
         num_examples = data.shape[0]
-        delta = LinearRegression.hypothesis(self.data, self.theta) - labels
-        cost = (1/2) * np.dot(delta.T, delta) / num_examples
+        delta = LinearRegression.hypothesis(self.data, self.theta) - labels   # [124,1]
+        cost = (1/2) * np.dot(delta.T, delta) / num_examples    # [1,1] eg [[100]]
         return cost[0][0]
 
     # 模型预测
